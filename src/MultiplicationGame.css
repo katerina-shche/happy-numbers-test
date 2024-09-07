@@ -1,0 +1,142 @@
+/* Main container with full height */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between; /* Align items to the top */
+    justify-content: space-between; /* Push content to the top */
+    width: 100%;
+    min-height: 100vh; /* Full screen height */
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 10px solid #f8f9fa; /* Light border color */
+  }
+  
+  .examples-with-blocks {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .example-block-row {
+    display: flex;
+    width: 100%;
+    /* margin-bottom: 20px; Increase spacing between rows */
+  }
+  
+  .left-half,
+  .right-half {
+    width: 50%;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Align items to the top */
+  }
+  
+  .solved-example,
+  .multiplication-example {
+    font-size: 1.5em;
+    text-align: left; /* Ensure text starts from the same left distance */
+    width: 50%; /* Adjust width to be consistent in the left half */
+  }
+  
+  /* Make the input smaller to fit only 3 digits */
+  .multiplication-example input {
+    width: 50px; /* Smaller width for 3 digits */
+    padding: 5px;
+    font-size: 1em;
+    margin-left: 10px;
+  }
+  
+  .block-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow blocks to wrap to the next line if necessary */
+    justify-content: center; /* Center blocks horizontally */
+  }
+  
+  .block {
+    width: 30px;
+    height: 30px;
+    background-color: #90ee90; /* Green cube color */
+    margin: 5px;
+  }
+  
+  /* Fly-in animation for the cubes */
+  .fly-in .block {
+    position: relative;
+    animation: flyFromBottom 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  @keyframes flyFromBottom {
+    from {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Fade-in animation for the example */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Button Styling */
+  .submit-button {
+    margin: 20px auto;
+
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #afeeee; /* Default color */
+    transition: background-color 0.5s ease;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+  }
+  
+  .submit-button:hover {
+    background-color: #afeeee; /* Hover color */
+  }
+  
+  .submit-button.disabled {
+    background-color: #a9a9a9; /* Disabled color */
+    cursor: not-allowed;
+  }
+  
+  .submit-button.right {
+    background-color: #228b22; /* Correct answer color */
+  }
+  
+  .submit-button.wrong {
+    background-color: #fa8072; /* Wrong answer color */
+  }
+  
+  /* Input flashes red if wrong */
+  .input-wrong {
+    border: 2px solid red;
+    animation: flashRed 0.5s ease;
+  }
+  
+  @keyframes flashRed {
+    0% {
+      background-color: #f8d7da;
+      color: red;
+    }
+    100% {
+      background-color: white;
+      color: black;
+    }
+  }
+  
