@@ -8,7 +8,7 @@ const MultiplicationGame = ({ N }) => {
   const [examplesWithBlocks, setExamplesWithBlocks] = useState([]);
   const [animateCubes, setAnimateCubes] = useState(false);
 
-  // Create a ref for the input to control focus
+  // a ref for the input to control focus
   const inputRef = useRef(null);
 
   // Auto focus on the input field when the component loads or a new example appears
@@ -26,18 +26,22 @@ const MultiplicationGame = ({ N }) => {
     const correctAnswer = N * currentMultiplier;
     if (parseInt(userInput) === correctAnswer) {
       setIsCorrect(true);
-      setCurrentMultiplier(currentMultiplier + 1);
+      if (currentMultiplier === 10) {
+        // Reset the game when multiplier reaches 10
+        setCurrentMultiplier(1);
+        setExamplesWithBlocks([]); // Clear solved examples
+      } else {
+        setCurrentMultiplier(currentMultiplier + 1);
+        setExamplesWithBlocks((prev) => [
+          ...prev,
+          {
+            example: `${N} × ${currentMultiplier} = ${correctAnswer}`,
+            blocks: N,
+            key: Date.now(),
+          },
+        ]);
+      }
       setUserInput('');
-
-      setExamplesWithBlocks((prev) => [
-        ...prev,
-        {
-          example: `${N} × ${currentMultiplier} = ${correctAnswer}`,
-          blocks: N,
-          key: Date.now(),
-        },
-      ]);
-
       setAnimateCubes(true);
 
       setTimeout(() => {
