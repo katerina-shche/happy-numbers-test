@@ -126,7 +126,7 @@
   /* Input flashes red if wrong */
   .input-wrong {
     border: 2px solid red;
-    animation: flashRed 0.5s ease;
+    animation: flashRed 1s ease;
   }
   
   @keyframes flashRed {
