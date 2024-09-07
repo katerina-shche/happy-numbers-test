@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/multiplication-game/static/css/main.b4429223.css",
+    "main.js": "/multiplication-game/static/js/main.cf653765.js",
+    "index.html": "/multiplication-game/index.html",
+    "main.b4429223.css.map": "/multiplication-game/static/css/main.b4429223.css.map",
+    "main.cf653765.js.map": "/multiplication-game/static/js/main.cf653765.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4429223.css",
+    "static/js/main.cf653765.js"
+  ]
+}
